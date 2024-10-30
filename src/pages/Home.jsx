@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import Offer from "../components/Offer";
+import Procurement from "../components/Procurement";
+import Empower from "../components/Empower";
 
 const Home = () => {
   useEffect(() => {
@@ -10,6 +12,8 @@ const Home = () => {
     <section>
       <Hero />
       <Offer />
+      <Procurement />
+      <Empower />
     </section>
   );
 };

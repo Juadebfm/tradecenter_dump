@@ -45,7 +45,7 @@ const Navbar = () => {
           <img
             src="/trade_center.png"
             alt="Tradecenter Logo"
-            className="w-auto h-[38.55px]"
+            className="w-auto h-[28.55px]"
           />
         </div>
 
