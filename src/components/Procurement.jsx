@@ -6,7 +6,7 @@ const Procurement = () => {
   return (
     <section className="grid grid-cols-1 lg:grid-cols-2 min-h-max md:min-h-[80vh] bg-[#FEECE9] mt-16 md:mt-0">
       <div>
-        <img src="/procurement.png" alt="" className="w-full h-full" />
+        <img src="/procurement.webp" alt="" className="w-full h-full" />
       </div>
       <div className="p-[35px] md:p-20 flex flex-col items-start justify-center">
         <div className="flex justify-start items-center gap-4 tracking-tighter mt-8 lg:mt-0 border-b border-[#DF312E] pb-5 md:pb-10">

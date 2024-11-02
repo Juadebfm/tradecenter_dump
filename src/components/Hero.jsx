@@ -3,7 +3,7 @@ import Button from "./r.components/Button";
 
 const Hero = () => {
   return (
-    <section className="min-h-[100vh] relative bg-[url('/hero.PNG')] bg-no-repeat bg-cover">
+    <section className="min-h-[100vh] relative bg-[url('/hero.webp')] bg-center bg-no-repeat bg-cover">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70" />
 

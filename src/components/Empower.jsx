@@ -74,7 +74,7 @@ const Empower = () => {
         />
       </div>
       <div className="order-1 md:order-2">
-        <img src="/empowerment.png" alt="" className="w-full h-full" />
+        <img src="/empowerment.webp" alt="" className="w-full h-full" />
       </div>
     </section>
   );
