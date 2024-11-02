@@ -1,23 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Services from "./pages/Services";
-import Choose from "./pages/Choose";
-import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Offer from "./components/Offer";
+import Procurement from "./components/Procurement";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/our-services" element={<Services />} />
-          <Route path="/why-choose-us" element={<Choose />} />
-          <Route path="/contact-us" element={<Contact />} />
-        </Routes>
-      </Router>
+      <Navbar />
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="services">
+          <Offer />
+        </section>
+        <section id="choose">
+          <Procurement />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+      <Footer />
     </>
   );
 };

@@ -5,10 +5,10 @@ import Button from "./r.components/Button";
 const Empower = () => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 min-h-max md:min-h-[80vh] bg-white ">
-      <div className="order-2 md:order-1 p-[35px] md:p-16 flex flex-col items-start justify-center">
-        <div className="flex justify-start items-center gap-4 tracking-tighter mt-8 lg:mt-0 border-b border-[#DF312E] pb-5 md:pb-10">
+      <div className="order-2 md:order-1 p-[35px] md:p-20 flex flex-col items-start justify-center">
+        <div className="flex justify-start items-center gap-2 md:gap-4 tracking-tighter mt-8 lg:mt-0 border-b border-[#DF312E] pb-5 md:pb-10">
           <div className="w-2 h-[150px] bg-tradecenter_red" />
-          <h2 className="text-tradecenter_dark_blue text-[32px] md:text-[48px] font-[700] leading-[1.1] w-[80%]">
+          <h2 className="text-tradecenter_dark_blue text-[32px] md:text-[48px] font-[700] leading-[1.1] w-full md:w-[80%]">
             Empowering Businesses with Secure Procurement
           </h2>
         </div>

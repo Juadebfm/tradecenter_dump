@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import Button from "./r.components/Button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
-  const location = useLocation();
+  const [activeSection, setActiveSection] = useState("home");
 
   // Handle scroll events
   useEffect(() => {
@@ -19,8 +19,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActivePage = (path) => {
-    return location.pathname === path
+  const isActiveSection = (section) => {
+    return activeSection === section
       ? "text-tradecenter_red"
       : "text-tradecenter_dark_blue";
   };
@@ -30,7 +30,7 @@ const Navbar = () => {
       <nav
         className={`
         fixed top-0 left-0 right-0 z-50
-        h-[100px] w-full px-6 md:px-28 
+        h-[100px] w-full px-6 md:px-16 lg:px-28 xl:px-32
         flex items-center justify-between
         transition-all duration-300 ease-in-out
         ${
@@ -41,43 +41,72 @@ const Navbar = () => {
       `}
       >
         {/* Logo */}
-        <div className="w-auto md:w-[15%]">
+        <div className="w-auto lg:w-[15%]">
           <img
             src="/trade_center.png"
             alt="Tradecenter Logo"
-            className="w-auto h-[28.55px]"
+            className="w-auto h-[38.55px]"
           />
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex w-[70%] space-x-8 items-center justify-center">
+        <ul className="hidden lg:flex w-[70%] space-x-8 items-center justify-center">
           <li className="hover:underline hover:underline-offset-4 duration-150 ease-linear">
-            <Link className={isActivePage("/")} to="/">
+            <ScrollLink
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`${isActiveSection("home")} cursor-pointer`}
+              onSetActive={() => setActiveSection("home")}
+            >
               Home
-            </Link>
+            </ScrollLink>
           </li>
           <li className="hover:underline hover:underline-offset-4 duration-150 ease-linear">
-            <Link className={isActivePage("/our-services")} to="/our-services">
+            <ScrollLink
+              to="services"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`${isActiveSection("services")} cursor-pointer`}
+              onSetActive={() => setActiveSection("services")}
+            >
               Our Services
-            </Link>
+            </ScrollLink>
           </li>
           <li className="hover:underline hover:underline-offset-4 duration-150 ease-linear">
-            <Link
-              className={isActivePage("/why-choose-us")}
-              to="/why-choose-us"
+            <ScrollLink
+              to="choose"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`${isActiveSection("choose")} cursor-pointer`}
+              onSetActive={() => setActiveSection("choose")}
             >
               Choose
-            </Link>
+            </ScrollLink>
           </li>
           <li className="hover:underline hover:underline-offset-4 duration-150 ease-linear">
-            <Link className={isActivePage("/contact-us")} to="/contact-us">
+            <ScrollLink
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              className={`${isActiveSection("contact")} cursor-pointer`}
+              onSetActive={() => setActiveSection("contact")}
+            >
               Contact
-            </Link>
+            </ScrollLink>
           </li>
         </ul>
 
         {/* Desktop Button */}
-        <div className="hidden md:flex w-[15%] items-center justify-center">
+        <div className="hidden lg:flex w-[15%] items-center justify-center">
           <Button
             btnText="Get A Quote"
             btnClass="text-white text-[15px] p-3 rounded-full bg-tradecenter_red w-[139px] h-[50px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-150 ease-in-out"
@@ -87,7 +116,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-tradecenter_red bg-[#FEECE9] p-2 rounded-md font-bold"
+          className="lg:hidden text-tradecenter_red bg-[#FEECE9] p-2 rounded-md font-bold"
         >
           {isOpen ? (
             <X size={30} className="transition-all duration-300 ease-in-out" />
@@ -111,40 +140,68 @@ const Navbar = () => {
           <div className="px-6 py-8">
             <ul className="space-y-6">
               <li>
-                <Link
-                  to="/"
-                  className={`text-lg ${isActivePage("/")}`}
+                <ScrollLink
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className={`text-lg ${isActiveSection(
+                    "home"
+                  )} cursor-pointer`}
                   onClick={() => setIsOpen(false)}
+                  onSetActive={() => setActiveSection("home")}
                 >
                   Home
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link
-                  to="/our-services"
-                  className={`text-lg ${isActivePage("/our-services")}`}
+                <ScrollLink
+                  to="services"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className={`text-lg ${isActiveSection(
+                    "services"
+                  )} cursor-pointer`}
                   onClick={() => setIsOpen(false)}
+                  onSetActive={() => setActiveSection("services")}
                 >
                   Our Services
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link
-                  to="/why-choose-us"
-                  className={`text-lg ${isActivePage("/why-choose-us")}`}
+                <ScrollLink
+                  to="choose"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className={`text-lg ${isActiveSection(
+                    "choose"
+                  )} cursor-pointer`}
                   onClick={() => setIsOpen(false)}
+                  onSetActive={() => setActiveSection("choose")}
                 >
                   Choose
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link
-                  to="/contact-us"
-                  className={`text-lg ${isActivePage("/contact-us")}`}
+                <ScrollLink
+                  to="contact"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  className={`text-lg ${isActiveSection(
+                    "contact"
+                  )} cursor-pointer`}
                   onClick={() => setIsOpen(false)}
+                  onSetActive={() => setActiveSection("contact")}
                 >
                   Contact
-                </Link>
+                </ScrollLink>
               </li>
             </ul>
 
