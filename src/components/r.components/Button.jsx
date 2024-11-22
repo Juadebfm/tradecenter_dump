@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-const Button = ({ btnText, btnClass, btnFunc, scrollTo }) => {
+const Button = ({
+  btnText,
+  btnClass,
+  btnFunc,
+  scrollTo,
+  type = "button", // Default to button, but allow 'submit'
+}) => {
   if (scrollTo) {
     return (
       <Link
@@ -18,9 +24,9 @@ const Button = ({ btnText, btnClass, btnFunc, scrollTo }) => {
   }
 
   return (
-    <div className={`${btnClass}`} onClick={btnFunc}>
+    <button type={type} className={`${btnClass}`} onClick={btnFunc}>
       {btnText}
-    </div>
+    </button>
   );
 };
 

@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import { Link as ScrollLink } from "react-scroll";
 
 const Footer = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setHasScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <footer className="bg-tradecenter_dark_red text-[#FFF8F7] px-[35px] md:px-20 py-[5rem] md:py-16 h-max">
       <section className="grid grid-cols-1 lg:grid-cols-3 items-start justify-between gap-16 place-items-start lg:place-items-start text-[#FFF8F7]">
@@ -18,22 +30,52 @@ const Footer = () => {
           <span className="text-[#DF312E] font-[600]">Quick Links</span>
           <ul className="mt-7 space-y-4">
             <li>
-              <a href="#">Home</a>
+              <ScrollLink
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                className={`cursor-pointer`}
+              >
+                Home
+              </ScrollLink>
             </li>
             <li>
-              <a href="#">Our Services</a>
+              <ScrollLink
+                to="services"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                className={`cursor-pointer`}
+              >
+                Services
+              </ScrollLink>
             </li>
             <li>
-              <a href="#">Individuals</a>
+              <ScrollLink
+                to="choose"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                className={`cursor-pointer`}
+              >
+                Why Choose Us
+              </ScrollLink>
             </li>
             <li>
-              <a href="#">Businesses</a>
-            </li>
-            <li>
-              <a href="#">Why Choose Us</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
+              <ScrollLink
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                className={`cursor-pointer`}
+              >
+                Contact
+              </ScrollLink>
             </li>
           </ul>
         </div>
@@ -47,11 +89,18 @@ const Footer = () => {
             </div>
             <div>
               <span className="text-[#DF312E] font-semibold">Email:</span>{" "}
-              <span>Tradecenter@gmail.com</span>
+              <a
+                href="mailto:sales@tradecenter.biz"
+                title="Click To Send Us An Email"
+              >
+                sales@tradecenter.biz
+              </a>
             </div>
             <div>
               <span className="text-[#DF312E] font-semibold">Phone:</span>{" "}
-              <span>+234 555 555 55</span>
+              <a href="tel:+2347077659671" title="Click To Give Us A Call">
+                +234 707 765 9671
+              </a>
             </div>
           </div>
           <div className="w-full flex items-start justify-start mt-6 space-x-3">

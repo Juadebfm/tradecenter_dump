@@ -108,6 +108,7 @@ const Navbar = () => {
         {/* Desktop Button */}
         <div className="hidden lg:flex w-[15%] items-center justify-center">
           <Button
+            scrollTo="contact"
             btnText="Get A Quote"
             btnClass="text-white text-[15px] p-3 rounded-full bg-tradecenter_red w-[139px] h-[50px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-150 ease-in-out"
           />
@@ -210,6 +211,7 @@ const Navbar = () => {
               <Button
                 btnText="Get A Quote"
                 btnClass="text-white text-[15px] p-3 rounded-full bg-tradecenter_red w-full h-[50px] flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-150 ease-in-out"
+                scrollTo="contact"
               />
             </div>
           </div>

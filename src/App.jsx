@@ -5,6 +5,8 @@ import Offer from "./components/Offer";
 import Procurement from "./components/Procurement";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
@@ -25,6 +27,7 @@ const App = () => {
         </section>
       </main>
       <Footer />
+      <ToastContainer />
     </>
   );
 };
