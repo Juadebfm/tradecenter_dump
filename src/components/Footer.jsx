@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { Link as ScrollLink } from "react-scroll";
+import { FaInstagram } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
 
 const Footer = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -105,22 +106,18 @@ const Footer = () => {
           </div>
           <div className="w-full flex items-start justify-start mt-6 space-x-3">
             <a
-              href="#"
-              className="text-tradecenter_text rounded-full p-2 bg-[#DF312E]"
-            >
-              <FaXTwitter size={14} className="text-white" />
-            </a>
-            <a
-              href="#"
-              className="text-tradecenter_text rounded-full p-2 bg-[#DF312E]"
+              href="https://www.facebook.com/profile.php?id=61560313782234&mibextid=LQQJ4d"
+              target="_blank"
+              className="text-tradecenter_text rounded-full p-2 bg-[#DF312E] hover:cursor-pointer hover:bg-[#df312e]/80 duration-300 transition-all ease-in"
             >
               <FaFacebookF size={14} className="text-white" />
             </a>
             <a
-              href="#"
-              className="text-tradecenter_text rounded-full p-2 bg-[#DF312E]"
+              href="https://www.instagram.com/_tradecenterng?igsh=MWNvYmVheHR3anc4NQ=="
+              target="_blank"
+              className="text-tradecenter_text rounded-full p-2 bg-[#DF312E] hover:cursor-pointer hover:bg-[#df312e]/80 duration-300 transition-all ease-in"
             >
-              <FaLinkedinIn size={14} className="text-white" />
+              <FaInstagram size={14} className="text-white" />
             </a>
           </div>
         </div>
